@@ -2,24 +2,45 @@
 layout: default
 ---
 
-<div class="home">
+<div class="content">
 
-  {% for category in site.categories %}
-  <h1 class="page-heading">{{ category | first | split: "_" | join: " " }}</h1>
-    <ul class="post-list">
-      {% for posts in category %}
-        {% for post in posts %}
-          <li>
-            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-            <p>
-              {{ post.title }}
-            </p>
-          </li>
+  <div id="all" class="box show">
+    <div class="item">
+      <div class="itemhead">
+        <h2>All</h2>
+        <p class="text">
+          {{ site.description }}
+          <br/>
+          Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>.
+        </p>
+        {% for post in site.posts %}
+          <p>
+            <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
+            <span class="category">{{ post.categories | first | split: "_" | join: " " }}</span>
+            {{ post.title }}
+          </p>
         {% endfor %}
-      {% endfor %}
-    </ul>
+        {% include itemfooter.html %}
+      </div>
+    </div>
+  </div>
+  {% for category in site.categories %}
+    <div id="{{ category | first }}" class="box">
+      <div class="item">
+        <div class="itemhead">
+          <h2>{{ category | first | split: "_" | join: " " }}</h2>
+          <p class="text">{{ site.description }}</p>
+          {% for posts in category %}
+            {% for post in posts %}
+              <p>
+                <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
+                {{ post.title }}
+              </p>
+            {% endfor %}
+          {% endfor %}
+          {% include itemfooter.html %}
+        </div>
+      </div>
+    </div>
   {% endfor %}
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
 </div>

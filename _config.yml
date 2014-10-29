@@ -1,7 +1,7 @@
 # Site settings
 title: Appsdeck Changelog
 email: hello@appsdeck.eu
-description: You fill find here all the changes on the Appsdeck platform
+description: You will find here all the changes on the Appsdeck platform.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://changelog.appsdeck.eu" # the base hostname & protocol for your site
 twitter_username: HelloAppsdeck
