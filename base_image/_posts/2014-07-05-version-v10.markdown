@@ -1,7 +1,0 @@
----
-layout: post
-date:   2014-07-05 10:00:00
-title: 'Version v9 - Install `libsasl2-dev`'
----
-
-Add libsasl2-dev to compile PHP memcached module
