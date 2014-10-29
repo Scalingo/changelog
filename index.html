@@ -5,7 +5,7 @@ layout: default
 <div class="home">
 
   {% for category in site.categories %}
-    <h1 class="page-heading">{{ category | first }}</h1>
+  <h1 class="page-heading">{{ category | first | split: "_" | join: " " }}</h1>
     <ul class="post-list">
       {% for posts in category %}
         {% for post in posts %}
