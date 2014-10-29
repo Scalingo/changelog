@@ -18,6 +18,10 @@ layout: default
             <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
             <span class="category">{{ post.categories | first | split: "_" | join: " " }}</span>
             {{ post.title }}
+            {% assign body = post.content | xml_escape | strip_html | strip_newlines | remove:' ' %}
+            {% if body != "" %}
+              <a href="{{ post.url }}">more</a>
+            {% endif %}
           </p>
         {% endfor %}
         {% include itemfooter.html %}
