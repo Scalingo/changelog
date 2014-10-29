@@ -1,21 +1,21 @@
 <div class="toolbar">
-    <div class="tabs">
-      <h1>Appsdeck Changelog</h1>
-        <ul>
-            <li class="tabitem active">
-              <a href="#all">
-                All
+  <h1>Appsdeck Changelog</h1>
+  <div class="tabs">
+      <ul>
+          <li class="tabitem active">
+            <a href="#all">
+              All
+              <span></span>
+            </a>
+          </li>
+          {% for category in site.categories %}
+            <li class="tabitem">
+              <a href="#{{ category | first }}">
+                {{ category | first | split: "_" | join: " " }}
                 <span></span>
               </a>
             </li>
-            {% for category in site.categories %}
-              <li class="tabitem">
-                <a href="#{{ category | first }}">
-                  {{ category | first | split: "_" | join: " " }}
-                  <span></span>
-                </a>
-              </li>
-            {% endfor %}
-        </ul>
-    </div>
+          {% endfor %}
+      </ul>
+  </div>
 </div>
