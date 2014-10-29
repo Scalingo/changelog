@@ -1,6 +1,7 @@
 <div class="toolbar">
-  <h1>Appsdeck Changelog</h1>
-  <div class="tabs">
+  <h1><a href="/">Appsdeck Changelog</a></h1>
+  {% if page.url == "/index.html" %}
+    <div class="tabs">
       <ul>
           <li class="tabitem active">
             <a href="#all">
@@ -17,5 +18,6 @@
             </li>
           {% endfor %}
       </ul>
-  </div>
+    </div>
+  {% endif %}
 </div>

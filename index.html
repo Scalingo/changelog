@@ -29,7 +29,11 @@ layout: default
       <div class="item">
         <div class="itemhead">
           <h2>{{ category | first | split: "_" | join: " " }}</h2>
-          <p class="text">{{ site.description }}</p>
+          <p class="text">
+            {{ site.description }}
+            <br/>
+            Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>.
+          </p>
           {% for posts in category %}
             {% for post in posts %}
               <p>
