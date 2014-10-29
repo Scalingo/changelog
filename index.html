@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  {% for category in site.categories %}
+    <h1 class="page-heading">{{ category | first }}</h1>
+    <ul class="post-list">
+      {% for posts in category %}
+        {% for post in posts %}
+          <li>
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+            <p>
+              {{ post.title }}
+            </p>
+          </li>
+        {% endfor %}
+      {% endfor %}
+    </ul>
+  {% endfor %}
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
