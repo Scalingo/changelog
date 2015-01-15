@@ -1,9 +1,9 @@
 # Site settings
-title: Appsdeck Changelog
-email: hello@appsdeck.eu
-description: You will find here all the changes on the Appsdeck platform.
+title: Scalingo Changelog
+email: hello@scalingo.com
+description: You will find here all the changes on the Scalingo platform.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://changelog.appsdeck.eu" # the base hostname & protocol for your site
+url: "http://changelog.scalingo.com" # the base hostname & protocol for your site
 twitter_username: HelloAppsdeck
 github_username:  Scalingo
 
