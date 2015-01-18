@@ -4,7 +4,7 @@ email: hello@scalingo.com
 description: You will find here all the changes on the Scalingo platform.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://changelog.scalingo.com" # the base hostname & protocol for your site
-twitter_username: HelloAppsdeck
+twitter_username: ScalingoHQ
 github_username:  Scalingo
 
 # Build settings
