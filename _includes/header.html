@@ -1,23 +1,6 @@
 <div class="toolbar">
-  <h1><a href="/">Scalingo Changelog</a></h1>
-  {% if page.url == "/index.html" %}
-    <div class="tabs">
-      <ul>
-          <li class="tabitem active">
-            <a href="#all">
-              All
-              <span></span>
-            </a>
-          </li>
-          {% for category in site.categories %}
-            <li class="tabitem">
-              <a href="#{{ category | first }}">
-                {{ category | first | split: "_" | join: " " }}
-                <span></span>
-              </a>
-            </li>
-          {% endfor %}
-      </ul>
-    </div>
-  {% endif %}
+  <div class="item transparent">
+    <a href="https://scalingo.com"><img src="/img/logo.svg" alt="Scalingo Logo" /></a>
+    <h1>Changelog</h1>
+  </div>
 </div>

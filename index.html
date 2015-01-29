@@ -7,25 +7,33 @@ layout: default
   <div id="all" class="box show">
     <div class="item">
       <div class="itemhead">
-        <h2>All</h2>
         <p class="text">
           {{ site.description }}
           <br/>
           Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>.
         </p>
         {% for post in site.posts %}
-          <p>
-            <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
-            <span class="category">{{ post.categories | first | split: "_" | join: " " }}</span>
+          {% assign body = post.content | xml_escape | strip_html | strip_newlines | remove:' ' %}
+          <div class="row">
+            <div class="date">{{ post.date | date: "%b %-d, %Y" }}</div>
+            <div class="category">{{ post.categories | first | split: "_" | join: " " }}</div>
+            <div class="post_content">
             {{ post.title }}
-            {% assign body = post.content | xml_escape | strip_html | strip_newlines | remove:' ' %}
             {% if body != "" %}
-              <a href="{{ post.url }}">more</a>
+              <a href="#" class="more">more</a>
             {% endif %}
-	    {% if post.github %}
-	      <a target="_blank" href="{{ post.github }}"><i class="icon icon--github">{% include github_svg.html %}</i></a>
-	    {% endif %}
-          </p>
+      	    {% if post.github %}
+      	      <a target="_blank" href="{{ post.github }}"><i class="icon icon--github">{% include github_svg.html %}</i></a>
+      	    {% endif %}
+            </div>
+          </div>
+          {% if body != "" %}
+            <div class="row hidden">
+              <div class="post_content full">
+                {{ post.content }}
+              </div>
+            </div>
+          {% endif %}
         {% endfor %}
         {% include itemfooter.html %}
       </div>
@@ -44,7 +52,7 @@ layout: default
           {% for posts in category %}
             {% for post in posts %}
               <p>
-                <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
+                <p class="date">{{ post.date | date: "%b %-d, %Y" }}</p>
                 {{ post.title }}
               </p>
             {% endfor %}

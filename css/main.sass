@@ -1,14 +1,12 @@
 ---
 ---
 
-@import url(http://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,300)
-
 body
   margin: 0
   background: #E5E5E5
   font-weight: 300
   color: #404040
-  font-family: "RobotoDraft", Helvetica, Arial, sans-serif
+  font-family: "Roboto", Helvetica, Arial, sans-serif
   letter-spacing: .1px
   -webkit-font-smoothing: antialiased
   text-rendering: optimizeLegibility
@@ -17,22 +15,29 @@ ul
   margin: 0
   padding: 0
 
+.hidden
+  display: none
+
 .toolbar
-  height: 128px
+  height: 64px
   background: #03A9F4
   color: white
+  padding-left: 14px
   h1
     margin: 0
-    margin-left: 20px
+    margin-left: 14px
     display: inline-block
-    font-size: 1.3em
+    font-size: 30px
     line-height: 64px
-    font-weight: 500
+    font-weight: 700
     color: white
     text-decoration: none
-    a, a:hover, a:visited
-      color: white
-      text-decoration: none
+  a
+    float: left
+  img
+    float: left
+    height: 40px
+    margin-top: 12px
 
 .tabs
   margin-left: 20px
@@ -99,6 +104,8 @@ ul
   background: white
   width: 1170px
   margin: 0 auto 2em
+  &.transparent
+    background: transparent
 
 .itemhead
   padding: 30px
@@ -119,18 +126,30 @@ ul
     top: 4px
     padding: 7px
     border-radius: 2px
+  .row
+    width: 100%
   .date
-    width: 110px
+    width: 10%
     display: inline-block
     color: #404040
     text-align: left
+    float: left
   .category
-    width: 100px
+    width: 10%
     display: inline-block
     color: #404040
     text-align: left
-  p
+    float: left
+  .post_content
+    width: 80%
+    float: left
     color: lighten(#404040, 30%)
+    &.full
+      margin-left: 20%
+      margin-bottom: 20px
+
+ul
+  margin-left: 15px
 
 .item
   p
@@ -161,6 +180,23 @@ ul
   overflow-x: hidden
   &.show
     display: block
+
+.row:before, .row:after
+  content: " "
+  display: table
+
+*:before, *:after
+  box-sizing: border-box
+
+.row:after
+  clear: both
+
+.row:before, .row:after
+  content: " "
+  display: table
+
+*:before, *:after
+  box-sizing: border-box
 
 =keyframes($name)
   @-webkit-keyframes #$name
@@ -204,6 +240,15 @@ ul
 @media (max-width: 767px)
   .item
     width: 90%
+  .itemhead
+    .row
+      margin-bottom: 20px
+    .date
+      width: 100%
+    .category
+      width: 100%
+    .post_content
+      width: 100%
 
 .icon > svg
   position: relative
