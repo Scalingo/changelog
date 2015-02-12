@@ -112,8 +112,11 @@ ul
   overflow: hidden
   position: relative
   img
-    border-radius: 100%
-    float: left
+    &:not(.logo)
+      border-radius: 100%
+      float: left
+    &.logo
+      height: 45px
   h2
     font-size: 1.4rem
     line-height: 1.1
