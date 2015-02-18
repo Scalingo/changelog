@@ -1,7 +1,7 @@
 # Site settings
 title: Scalingo Changelog
 email: hello@scalingo.com
-description: You will find here all the changes on the Scalingo platform.
+description: You will find here all the changes applied to the Scalingo platform.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://changelog.scalingo.com" # the base hostname & protocol for your site
 twitter_username: ScalingoHQ
