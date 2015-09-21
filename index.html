@@ -1,69 +1,34 @@
 ---
 layout: default
+title: CLI
+date: 2015-09-09 00:00:00
 ---
 
-<div class="content">
+<h1>
+  Changelog
+  <a href="{{ "/feed.xml" | prepend: site.baseurl }}"><i class="fa fa-rss"></i></a>
+</h1>
 
-  <div id="all" class="box show">
-    <div class="item">
-      <div class="itemhead">
-        <p>
-          <a href="https://scalingo.com"><img src="https://scalingo.com/logo-lightgrey.svg" alt="Scalingo Logo" class="logo"/></a>
-        </p>
-        <h1>Changelog</h1>
-        <p class="text">
-          {{ site.description }}
-          <br/>
-          Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>.
-        </p>
-        {% for post in site.posts %}
-          {% assign body = post.content | xml_escape | strip_html | strip_newlines | remove:' ' %}
-          <div class="row">
-            <div class="date">{{ post.date | date: "%b %-d, %Y" }}</div>
-            <div class="category">{{ post.categories | first | split: "_" | join: " " }}</div>
-            <div class="post_content">
-            {{ post.title }}
-            {% if body != "" %}
-              <a href="#" class="more">more</a>
-            {% endif %}
-      	    {% if post.github %}
-      	      <a target="_blank" href="{{ post.github }}"><i class="icon icon--github">{% include github_svg.html %}</i></a>
-      	    {% endif %}
-            </div>
-          </div>
-          {% if body != "" %}
-            <div class="row hidden">
-              <div class="post_content full">
-                {{ post.content }}
-              </div>
-            </div>
-          {% endif %}
-        {% endfor %}
-        {% include itemfooter.html %}
-      </div>
+{% for post in site.posts %}
+  {% assign body = post.content | xml_escape | strip_html | strip_newlines | remove:' ' %}
+  <div class="row">
+    <div class="date">{{ post.date | date: "%b %-d, %Y" }}</div>
+    <div class="category">{{ post.categories | first | split: "_" | join: " " }}</div>
+    <div class="post_content">
+    {{ post.title }}
+    {% if body != "" %}
+      <a href="#" class="more">more</a>
+    {% endif %}
+    {% if post.github %}
+      <a target="_blank" href="{{ post.github }}"><i class="icon icon--github">{% include github_svg.html %}</i></a>
+    {% endif %}
     </div>
   </div>
-  {% for category in site.categories %}
-    <div id="{{ category | first }}" class="box">
-      <div class="item">
-        <div class="itemhead">
-          <h2>{{ category | first | split: "_" | join: " " }}</h2>
-          <p class="text">
-            {{ site.description }}
-            <br/>
-            Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>.
-          </p>
-          {% for posts in category %}
-            {% for post in posts %}
-              <p>
-                <p class="date">{{ post.date | date: "%b %-d, %Y" }}</p>
-                {{ post.title }}
-              </p>
-            {% endfor %}
-          {% endfor %}
-          {% include itemfooter.html %}
-        </div>
+  {% if body != "" %}
+    <div class="row hidden">
+      <div class="post_content full">
+        {{ post.content }}
       </div>
     </div>
-  {% endfor %}
-</div>
+  {% endif %}
+{% endfor %}

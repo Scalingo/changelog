@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
-
   {% include head.html %}
-
   <body>
-
-    {{ content }}
-
-    <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
+    {% include nav.html %}
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 content">
+            {{ content }}
+        </div>
+      </div>
+    </div>
+    {% include footer.html %}
+    <script data-main="{{ site.baseurl }}/assets/javascripts/application" src="{{ site.baseurl }}/assets/javascripts/require.js"></script>
   </body>
-
 </html>
