@@ -6,15 +6,15 @@ date: 2015-09-09 00:00:00
 
 <h1>
   Changelog
-  <a href="{{ "/feed.xml" | prepend: site.baseurl }}"><i class="fa fa-rss"></i></a>
+  <a href="{{ "/feed.xml" | prepend: site.baseurl }}"><i class="fa fa-rss feed"></i></a>
 </h1>
 
 {% for post in site.posts %}
   {% assign body = post.content | xml_escape | strip_html | strip_newlines | remove:' ' %}
-  <div class="row">
-    <div class="date">{{ post.date | date: "%b %-d, %Y" }}</div>
-    <div class="category">{{ post.categories | first | split: "_" | join: " " }}</div>
-    <div class="post_content">
+  <div class="content mdl-grid">
+    <div class="mdl-cell mdl-cell--2-col">{{ post.date | date: "%b %-d, %Y" }}</div>
+    <div class="mdl-cell mdl-cell--2-col">{{ post.categories | first | split: "_" | join: " " }}</div>
+    <div class="post_content mdl-cell mdl-cell--8-col">
     {{ post.title }}
     {% if body != "" %}
       <a href="#" class="more">more</a>
@@ -25,10 +25,12 @@ date: 2015-09-09 00:00:00
     </div>
   </div>
   {% if body != "" %}
-    <div class="row hidden">
-      <div class="post_content full">
-        {{ post.content }}
-      </div>
+  <div class="content mdl-grid hidden">
+    <div class="mdl-cell mdl-cell--2-col"></div>
+    <div class="mdl-cell mdl-cell--2-col"></div>
+    <div class="post_content full mdl-cell mdl-cell--8-col">
+      {{ post.content }}
     </div>
+  </div>
   {% endif %}
 {% endfor %}
