@@ -1,0 +1,7 @@
+---
+layout:	post
+date:	2016-02-12 16:35:06
+title:	'Redis - New default version: 3.0.7'
+---
+
+Docker image is now scalingo/redis:3.0.7-1 and is now based on Alpine Linux
