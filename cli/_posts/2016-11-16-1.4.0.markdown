@@ -9,9 +9,9 @@ Installation:
 
 [http://cli.scalingo.com](http://cli.scalingo.com)
 
-Changelog: 
+Changelog:
 
-### v1.3.1 - 02/05/2016
+### v1.4.0 - 02/05/2016
 
 * [Feature] Add timeline and user-timeline to display per are of user-global activities #235
 * [Feature] Add list, remove and add commands for notifications
