@@ -11,8 +11,6 @@ Installation:
 
 Changelog:
 
-## Changelog
-
 * [Commands] Add `rename` command to rename an application [#330](https://github.com/Scalingo/cli/issues/330)
 * [One-off] Better inactivity timeout error message [#323](https://github.com/Scalingo/cli/issues/323)
 * [DB Console] Add support for TLS connection to databases [#312](https://github.com/Scalingo/cli/issues/312)
